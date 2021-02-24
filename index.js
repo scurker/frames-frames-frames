@@ -20,7 +20,7 @@ if (topShadowRoot) {
     <h3>Shadow Frame (same-domain)</h3>
     <iframe title="shadow nested frame (same-domain)" src="nested-frame.html"></iframe>
     <h3>Shadow Frame (x-domain)</h3>
-    <iframe title="shadow nested frame (x-domain)" src="nested-frame.html"></iframe>
+    <iframe title="shadow nested frame (x-domain)" src="https://scurker.github.io/frames-frames-frames/nested-frame.html"></iframe>
   `
   shadow.appendChild(style)
 }
