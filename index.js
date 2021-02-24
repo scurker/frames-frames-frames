@@ -2,6 +2,11 @@ const topShadowRoot = document.getElementById('top-shadow-root')
 const frameShadowRoot = document.getElementById('frame-shadow-root')
 const nestedShadowRoot = document.getElementById('nested-shadow-root')
 const shadowStyles = `
+  :host {
+    background-color: #394;
+    padding: 1em;
+  }
+
   .color-contrast {
     background-color: #f00;
     border: 1px solid #a00;
@@ -27,7 +32,7 @@ if (topShadowRoot) {
 }
 
 if (frameShadowRoot) {
-  const shadow = topShadowRoot.attachShadow({ mode: 'open' })
+  const shadow = frameShadowRoot.attachShadow({ mode: 'open' })
   const style = document.createElement('style')
   style.innerText = shadowStyles
   shadow.innerHTML = `
