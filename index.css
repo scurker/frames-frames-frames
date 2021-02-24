@@ -1,0 +1,25 @@
+body {
+  font-family: system-ui;
+  padding: 0;
+}
+
+.color-contrast {
+  background-color: #f00;
+  border: 1px solid #a00;
+  color: pink;
+  padding: .5em 1em;
+  border-radius: 4px;
+}
+
+#top-frame {
+  height: 450px;
+  width: 500px;
+}
+
+.top-frame {
+  background-color: #fc1;
+}
+
+.nested-frame {
+  background-color: yellowgreen;
+}

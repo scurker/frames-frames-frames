@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Frames in Frames in Shadow in Frames</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <main>
+      <h1>Root Frame</h1>
+      <button class="color-contrast">Click Me</button>
+      <h2>Top Frame (same domain)</h2>
+      <iframe title="Top Frame (same domain)" id="top-frame" src="top-frame.html"></iframe>
+      <h2>Top Frame (x-domain)</h2>
+      <iframe title="Top Frame (x-domain)" id="top-frame" src="top-frame.html"></iframe>
+      <h2>Top Shadow Root</h2>
+      <div id="top-shadow-root"></div>
+      <script src="index.js"></script>
+    </main>
+  </body>
+</html>
