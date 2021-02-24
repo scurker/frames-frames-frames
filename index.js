@@ -56,3 +56,15 @@ if (nestedShadowRoot) {
   `
   shadow.appendChild(style)
 }
+
+if (window.top === window) {
+  const element = document.getElementById('top-frame-async')
+  if (element) {
+    setTimeout(() => {
+      const asyncFrame = document.createElement('iframe')
+      asyncFrame.setAttribute('src', 'async-frame.html')
+      asyncFrame.setAttribute('title', 'async x-domain frame')
+      element.appendChild(asyncFrame)
+    }, 3000)
+  }
+}
