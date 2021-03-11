@@ -68,3 +68,20 @@ if (window.top === window) {
     }, 3000)
   }
 }
+
+document.body.addEventListener('click', e => {
+  switch (e.target.getAttribute('id')) {
+    case 'hide-same-domain-frame':
+      document.getElementById('top-frame-same-domain').style.display = e.target.checked ? 'none' : ''
+    break
+    case 'hide-cross-domain-frame':
+      document.getElementById('top-frame-cross-domain').style.display = e.target.checked ? 'none' : ''
+    break
+    case 'hide-async-cross-domain-frame':
+      document.getElementById('top-frame-async').style.display = e.target.checked ? 'none' : ''
+    break
+    case 'hide-shadow-root':
+      document.getElementById('top-shadow-root').style.display = e.target.checked ? 'none' : ''
+    break
+  }
+})

@@ -6,14 +6,33 @@
   </head>
   <body>
     <main>
+      <fieldset>
+        <legend>Toggle Frames</legend>
+        <div class="checkbox">
+          <input id="hide-same-domain-frame" type="checkbox" name="hideSameDomainFrame" />
+          <label for="hide-same-domain-frame">Hide Same Domain Frame</label>
+        </div>
+        <div class="checkbox">
+          <input id="hide-cross-domain-frame" type="checkbox" name="hideCrossDomainFrame" />
+          <label for="hide-cross-domain-frame">Hide Cross Domain Frame</label>
+        </div>
+        <div>
+          <input id="hide-async-cross-domain-frame" type="checkbox" name="hideAsyncCrossDomainFrame" />
+          <label for="hide-async-cross-domain-frame">Hide Async Cross Domain Frame</label>
+        </div>
+        <div class="checkbox">
+          <input id="hide-shadow-root" type="checkbox" name="hideShadowRoot" />
+          <label for="hide-shadow-root">Hide Shadow Root</label>
+        </div>
+      </fieldset>
       <h1>Root Frame</h1>
       <button class="color-contrast">Click Me</button>
       <h2>Top Frame (same domain)</h2>
-      <iframe title="Top Frame (same domain)" id="top-frame" src="top-frame.html"></iframe>
+      <iframe title="Top Frame (same domain)" id="top-frame-same-domain" src="top-frame.html"></iframe>
       <h2>Top Frame (async, x-domain)</h2>
       <div id="top-frame-async"></div>
       <h2>Top Frame (x-domain)</h2>
-      <iframe title="Top Frame (x-domain)" id="top-frame" src="https://scurker.github.io/frames-frames-frames/top-frame.html"></iframe>
+      <iframe title="Top Frame (x-domain)" id="top-frame-cross-domain" src="https://scurker.github.io/frames-frames-frames/top-frame.html"></iframe>
       <h2>Top Shadow Root</h2>
       <div id="top-shadow-root"></div>
       <script src="index.js"></script>

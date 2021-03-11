@@ -11,7 +11,8 @@ body {
   border-radius: 4px;
 }
 
-#top-frame {
+#top-frame-same-domain,
+#top-frame-cross-domain {
   height: 1000px;
   width: 500px;
 }
