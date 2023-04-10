@@ -62,7 +62,7 @@ if (window.top === window) {
   if (element) {
     setTimeout(() => {
       const asyncFrame = document.createElement('iframe')
-      asyncFrame.setAttribute('src', 'async-frame.html')
+      asyncFrame.setAttribute('src', 'https://scurker.github.io:443/frames-frames-frames/async-frame.html')
       asyncFrame.setAttribute('title', 'async x-domain frame')
       element.appendChild(asyncFrame)
     }, 3000)
