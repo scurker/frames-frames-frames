@@ -58,13 +58,22 @@ if (nestedShadowRoot) {
 }
 
 if (window.top === window) {
-  const element = document.getElementById('top-frame-async')
-  if (element) {
+  const sameDomainElement = document.getElementById('top-frame-async-same-domain')
+  const xDomainElement = document.getElementById('top-frame-async-cross-domain')
+  if (sameDomainElement) {
+    setTimeout(() => {
+      const asyncFrame = document.createElement('iframe')
+      asyncFrame.setAttribute('src', 'async-frame.html')
+      asyncFrame.setAttribute('title', 'async same domain frame')
+      sameDomainElement.appendChild(asyncFrame)
+    }, 3000)
+  }
+  if (xDomainElement) {
     setTimeout(() => {
       const asyncFrame = document.createElement('iframe')
       asyncFrame.setAttribute('src', 'https://scurker.github.io:443/frames-frames-frames/async-frame.html')
       asyncFrame.setAttribute('title', 'async x-domain frame')
-      element.appendChild(asyncFrame)
+      xDomainElement.appendChild(asyncFrame)
     }, 3000)
   }
 }
@@ -77,8 +86,11 @@ document.body.addEventListener('click', e => {
     case 'hide-cross-domain-frame':
       document.getElementById('top-frame-cross-domain').style.display = e.target.checked ? 'none' : ''
     break
+    case 'hide-async-same-domain-frame':
+      document.getElementById('top-frame-async-same-domain').style.display = e.target.checked ? 'none' : ''
+    break
     case 'hide-async-cross-domain-frame':
-      document.getElementById('top-frame-async').style.display = e.target.checked ? 'none' : ''
+      document.getElementById('top-frame-async-cross-domain').style.display = e.target.checked ? 'none' : ''
     break
     case 'hide-shadow-root':
       document.getElementById('top-shadow-root').style.display = e.target.checked ? 'none' : ''

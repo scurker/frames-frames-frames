@@ -17,6 +17,10 @@
           <label for="hide-cross-domain-frame">Hide Cross Domain Frame</label>
         </div>
         <div>
+          <input id="hide-async-same-domain-frame" type="checkbox" name="hideAsyncSameDomainFrame" />
+          <label for="hide-async-cross-domain-frame">Hide Async Same Domain Frame</label>
+        </div>
+        <div>
           <input id="hide-async-cross-domain-frame" type="checkbox" name="hideAsyncCrossDomainFrame" />
           <label for="hide-async-cross-domain-frame">Hide Async Cross Domain Frame</label>
         </div>
@@ -30,7 +34,9 @@
       <h2>Top Frame (same domain)</h2>
       <iframe title="Top Frame (same domain)" id="top-frame-same-domain" src="top-frame.html"></iframe>
       <h2>Top Frame (async, x-domain)</h2>
-      <div id="top-frame-async"></div>
+      <div id="top-frame-async-same-domain"></div>
+      <h2>Top Frame (same domain)</h2>
+      <div id="top-frame-async-cross-domain"></div>
       <h2>Top Frame (x-domain)</h2>
       <iframe title="Top Frame (x-domain)" id="top-frame-cross-domain" src="https://scurker.github.io/frames-frames-frames/top-frame.html"></iframe>
       <h2>Top Shadow Root</h2>
