@@ -79,21 +79,29 @@ if (window.top === window) {
 }
 
 document.body.addEventListener('click', e => {
+  const hideNode = id => {
+    const target = document.getElementById(id)
+    target.style.display = e.target.checked ? 'none' : ''
+    // Hack to hide node from tools checking for isConnected
+    Object.defineProperty(target, 'isConnected', {
+      value: !!e.target.checked
+    })
+  }
   switch (e.target.getAttribute('id')) {
     case 'hide-same-domain-frame':
-      document.getElementById('top-frame-same-domain').style.display = e.target.checked ? 'none' : ''
+      hideNode('top-frame-same-domain')
     break
     case 'hide-cross-domain-frame':
-      document.getElementById('top-frame-cross-domain').style.display = e.target.checked ? 'none' : ''
+      hideNode('top-frame-cross-domain')
     break
     case 'hide-async-same-domain-frame':
-      document.getElementById('top-frame-async-same-domain').style.display = e.target.checked ? 'none' : ''
+      hideNode('top-frame-async-same-domain')
     break
     case 'hide-async-cross-domain-frame':
-      document.getElementById('top-frame-async-cross-domain').style.display = e.target.checked ? 'none' : ''
+      hideNode('top-frame-async-cross-domain')
     break
     case 'hide-shadow-root':
-      document.getElementById('top-shadow-root').style.display = e.target.checked ? 'none' : ''
+      hideNode('top-shadow-root')
     break
   }
 })
