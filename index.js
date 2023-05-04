@@ -84,7 +84,8 @@ document.body.addEventListener('click', e => {
     target.style.display = e.target.checked ? 'none' : ''
     // Hack to hide node from tools checking for isConnected
     Object.defineProperty(target, 'isConnected', {
-      value: !!e.target.checked
+      value: !!e.target.checked,
+      configurable: true
     })
   }
   switch (e.target.getAttribute('id')) {
