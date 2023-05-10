@@ -11,4 +11,11 @@
       <div id="nested-shadow-root"></div>
     </main>
   </body>
+  <script>
+    // Set random hash to ensure frame urls are distinctly unique
+    Array.from(document.querySelectorAll('iframe')).forEach(frame => {
+      const value = Math.random().toString(36).slice(2, 8)
+      frame.src = `${frame.src}?q=${value}`
+    })
+  </script>
 </html>
