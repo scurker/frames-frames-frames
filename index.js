@@ -24,9 +24,9 @@ if (topShadowRoot) {
     <h2>Shadow Dom</h2>
     <button class="color-contrast">Click Me</button>
     <h3>Shadow Frame (same-domain)</h3>
-    <iframe title="shadow nested frame (same-domain)" src="nested-frame.html"></iframe>
+    <iframe title="shadow nested frame (same-domain)" src="nested-frame.html?topshadow=true"></iframe>
     <h3>Shadow Frame (x-domain)</h3>
-    <iframe title="shadow nested frame (x-domain)" src="https://scurker.github.io:443/frames-frames-frames/nested-frame.html"></iframe>
+    <iframe title="shadow nested frame (x-domain)" src="https://scurker.github.io:443/frames-frames-frames/nested-frame.html?topshadow=true"></iframe>
   `
   shadow.appendChild(style)
 }
@@ -39,9 +39,9 @@ if (frameShadowRoot) {
     <h2>Frame Shadow Dom</h2>
     <button class="color-contrast">Click Me</button>
     <h3>Shadow Frame (same-domain)</h3>
-    <iframe title="frame shadow nested frame (same-domain)" src="nested-frame.html"></iframe>
+    <iframe title="frame shadow nested frame (same-domain)" src="nested-frame.html?frameshadow=true"></iframe>
     <h3>Shadow Frame (x-domain)</h3>
-    <iframe title="frame shadow nested frame (x-domain)" src="https://scurker.github.io:443/frames-frames-frames/nested-frame.html"></iframe>
+    <iframe title="frame shadow nested frame (x-domain)" src="https://scurker.github.io:443/frames-frames-frames/nested-frame.html?frameshadow=true"></iframe>
   `
   shadow.appendChild(style)
 }
