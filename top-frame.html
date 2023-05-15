@@ -18,10 +18,19 @@
     </main>
   </body>
   <script>
-    // Set random hash to ensure frame urls are distinctly unique
-    Array.from(document.querySelectorAll('iframe')).forEach(frame => {
+    const appendQueryStringHash = frame => {
       const value = Math.random().toString(36).slice(2, 8)
       frame.src = `${frame.src}?q=${value}`
-    })
+    }
+
+    // Set random hash at the top level to ensure frame urls are distinctly unique
+    Array.from(document.querySelectorAll('iframe'))
+      .forEach(appendQueryStringHash)
+
+    // Set random query string in shadow roots
+    Array.from(document.querySelectorAll('*'))
+      .filter(el => !!el.shadowRoot)
+      .flatMap(el => Array.from(el.shadowRoot.querySelectorAll('iframe')))
+      .forEach(appendQueryStringHash)
   </script>
 </html>
